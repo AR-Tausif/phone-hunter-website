@@ -48,7 +48,7 @@
       </nav>
 </header>
 <main>
-    <section>
+    <section class="mt-5">
         <div class="container">
             <div class="input-group mb-3">
                 <input id="search-field" type="text" class="form-control" placeholder="Search phones" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -76,6 +76,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="d-none" id="loader">
+        <div class="container d-flex justify-content-center align-items-center mt-2">
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
         </div>
     </section>
 </main>

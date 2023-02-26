@@ -34,13 +34,24 @@ displayPhones=data=>{
         phoneContainer.appendChild(phoneDiv);
         // console.log(phone);
     })
+    pushSpinner(false)
 }
 
 document.getElementById('search-button').addEventListener('click', function(){
+  pushSpinner(true)
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
   loadPhones(searchText);
 searchField.value = "";
 })
+// Spinner working function start here
+const pushSpinner = isLoadiing =>{
+const loader = document.getElementById('loader')
+if(isLoadiing){
+  loader.classList.remove('d-none')
+}else{
+  loader.classList.add('d-none')
+}
 
+};
 loadPhones('iphone');
