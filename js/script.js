@@ -6,10 +6,19 @@ const loadPhones = async (searchText) =>{
 }
 
 displayPhones=data=>{
-  data = data.slice(0, 25)
     const phoneContainer = document.getElementById('card-container');
     phoneContainer.innerText = '';
     const pageError = document.getElementById('PageError');
+    // Load show all system
+    const showMoreSection = document.getElementById('show-all-phone')
+    if(data.length > 10){
+      data = data.slice(0, 10)
+      showMoreSection.classList.remove('d-none')
+    }else{
+      showMoreSection.classList.add('d-none')
+    }
+
+    // Items loading spinner displaying
     if(data.length === 0){
       pageError.classList.remove('d-none');
  
@@ -45,6 +54,8 @@ document.getElementById('search-button').addEventListener('click', function(){
   loadPhones(searchText);
 searchField.value = "";
 })
+// Showing all items here
+document.getElementById('show-all-btn').addEventListener('click')
 // Spinner working function start here
 const pushSpinner = isLoadiing =>{
 const loader = document.getElementById('loader')
@@ -53,6 +64,7 @@ if(isLoadiing){
 }else{
   loader.classList.add('d-none')
 }
-
 };
+
+
 loadPhones('iphone');
