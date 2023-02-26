@@ -6,6 +6,7 @@ const loadPhones = async (searchText) =>{
 }
 
 displayPhones=data=>{
+  data = data.slice(0, 25)
     const phoneContainer = document.getElementById('card-container');
     phoneContainer.innerText = '';
     const pageError = document.getElementById('PageError');
