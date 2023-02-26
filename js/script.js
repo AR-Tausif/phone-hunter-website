@@ -55,7 +55,12 @@ document.getElementById('search-button').addEventListener('click', function(){
 searchField.value = "";
 })
 // Showing all items here
-document.getElementById('show-all-btn').addEventListener('click')
+document.getElementById('show-all-btn').addEventListener('click', function(){
+  const searchField = document.getElementById('search-field');
+  const searchText = searchField.value;
+loadPhones(searchText);
+
+})
 // Spinner working function start here
 const pushSpinner = isLoadiing =>{
 const loader = document.getElementById('loader')
